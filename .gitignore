@@ -6,5 +6,7 @@ phonebook_project/__init__.py
 phonebook_project/.env
 imp.txt
 env/
+db.sqlite3
+
 
 
