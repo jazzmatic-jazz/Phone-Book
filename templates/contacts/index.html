@@ -1,0 +1,8 @@
+{% extends 'contacts/base.html' %}
+
+{% block content %}
+    {% for i in object_list %}
+        {{i.first_name}} {{i.last_name}} 
+        {{i.ph_num}}
+    {% endfor %}
+{% endblock content %} 
