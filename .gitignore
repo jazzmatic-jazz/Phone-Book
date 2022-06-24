@@ -1,0 +1,10 @@
+contacts/migrations/
+contacts/__init__.py
+manage.py
+phonebook_project/__pycache__
+phonebook_project/__init__.py
+phonebook_project/.env
+imp.txt
+env/
+
+
