@@ -1,3 +1,7 @@
-from django.shortcuts import render
+import imp
+from .models import Contacts
+from django.views.generic import ListView
 
-# Create your views here.
+class IndexView(ListView):
+    model = Contacts
+    template_name = 'contacts/index.html'
