@@ -1,10 +1,10 @@
-from pyexpat import model
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 class Contacts(models.Model):
     first_name = models.CharField(max_length=15, help_text="John")
     last_name = models.CharField(max_length=15, help_text="Doe")
-    ph_num = models.CharField(max_length=10, help_text="9999999999")
+    ph_num = PhoneNumberField()
 
     class Meta:
         ordering = ['-first_name']
