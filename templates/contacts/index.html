@@ -1,7 +1,7 @@
 {% extends 'contacts/base.html' %}
 
 {% block content %}
-    {% for i in object_list %}
+    {% for i in index %}
         {{i.first_name}} {{i.last_name}} 
         {{i.ph_num}}
     {% endfor %}
