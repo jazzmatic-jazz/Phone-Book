@@ -1,4 +1,5 @@
 contacts/migrations/
+contacts/__pycache__
 contacts/__init__.py
 manage.py
 phonebook_project/__pycache__
