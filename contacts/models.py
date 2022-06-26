@@ -7,7 +7,7 @@ class Contacts(models.Model):
     ph_num = PhoneNumberField()
 
     class Meta:
-        ordering = ['-first_name']
+        ordering = ['first_name']
     
     def __str__(self):
         return f"{self.first_name} {self.last_name} - {self.ph_num}"
