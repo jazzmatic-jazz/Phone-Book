@@ -8,14 +8,13 @@ class IndexView(ListView):
     template_name = 'contacts/index.html'
     context_object_name = 'index'
 
-class ContactDetailView(DetailView):
-    model = Contacts
-    template_name = 'contacts/detail.html'
-    context_object_name = 'contact'
+# class ContactDetailView(DetailView):
+#     model = Contacts
+#     template_name = 'contacts/detail.html'
+#     context_object_name = 'contact'
 
 class ContactCreateView(CreateView):
     model = Contacts
-    # fields = ['first_name', 'last_name', 'ph_num']
     form_class = ContactForm
     template_name = 'contacts/create.html'
     success_url = '/'
