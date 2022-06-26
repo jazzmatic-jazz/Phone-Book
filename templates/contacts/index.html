@@ -1,8 +1,23 @@
 {% extends 'contacts/base.html' %}
 
+{% block title %}HOME {% endblock title %}
+
 {% block content %}
-    {% for i in index %}
-        {{i.first_name}} {{i.last_name}} 
-        {{i.ph_num}}
-    {% endfor %}
+
+<div class="w-25 p-2 mb-2 mx-auto">
+ <h3 class="text-center text-secondary">PHONE-BOOK</h3> 
+</div>
+
+{% for i in index %}
+<div class="card text-bg-info mb-3 mx-auto" style="max-width: 20rem;">
+   
+        <div class="card-header">{{i.first_name}} {{i.last_name}} </div>
+        <div class="card-body">
+        <span class='bi bi-telephone' style='color: blue'>{{i.ph_num}}</span>
+    
+    </div>
+   
+  </div>
+  {% endfor %}
+
 {% endblock content %} 

@@ -1,12 +1,15 @@
 {% extends 'contacts/base.html' %}
 
+{% block title %}DELETE{% endblock title %}
+
 {% block content %}
 
-<div class="container pt-5">
+<div class="container pt-5 text-center">
     <form method="post" novalidate>
         {% csrf_token %}
-        <p>Are you sure you want to delete post "{{ object.first_name }}"?</p>
-        <input type="submit" value="confirm">
+        <p class="fw-semibold mb-5">Are you sure you want to delete "{{ object.first_name }}"?</p>
+        <button type="submit" class="btn btn-danger btn-group btn-group-sm" value="confirm">Delete</button>
+
     </form>
 </div>
 

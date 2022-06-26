@@ -1,33 +1,26 @@
 {% extends 'contacts/base.html' %}
 
+{% block title %}MANAGE{% endblock title %}
+
 {% block content %}
-  <br/>
-  <div>
-        <a class="btn btn-secondary" href="{% url 'contacts:create' %}" role="button">Add Post</a>
-  </div>
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        {% if object_list %}
-          {% for each in manage_list %}
-            <div class="card mb-4 box-shadow">
-              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-              <div class="card-body">
-                  <p class="card-text">{{each.first_name}}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'contacts:update' each.id %}" role="button">Edit</a>
-                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'contacts:delete' each.id %}" role="button">Delete</a>
-                  </div>
-              </div>
-            </div><!-- /.col-lg-4 -->
-          {% endfor %}
-        {% else %}
-            No Post Found
-        {% endif %}
-      </div>
-    </div><!-- /.row -->
-  </div>
+{% if object_list %}
+  <div class="card w-50 mx-auto">
+  {% for each in manage_list %}
+
+    <h5 class="card-header shadow-lg p-3 mb-2 bg-body rounded">{{each.first_name}} {{each.last_name}}</h5>
+    <div class="card-body mb-3 p-3 ">
+      <h5 class="card-title mb-3">{{each.ph_num}}</h5>
+      <a href="{% url 'contacts:update' each.id %}" class="btn btn-outline-info btn-sm ">Update</a>
+      <a href="{% url 'contacts:delete' each.id %}" class="btn btn-outline-danger btn-sm ">Delete</a>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+    <blockquote class="blockquote text-center">
+      <p>No Contacts Found</p>
+      <a href="{% url 'contacts:create' %}" class="btn btn-primary">Create New!</a>
+    </blockquote>
+{% endif %}
+
+  
 {% endblock %}
